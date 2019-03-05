@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class&Binding</title>
+</head>
+<body>
+  <div class="static" v-bind:class="{active:isActive, 'text-danger': hasError }">
+  </div>
+
+  <!-- <div v-bind : class="classObject"></div> -->
+
+  <div class="a" v-bind:class="[acitveClass, errorClass]"></div>
+
+  <div class="b" v-bind:style="styleObject">
+    SiBAL
+  </div>
+
+</body>
+<script src="https://unpkg.com/vue"></script>
+<script>
+  var vm1=new Vue ({
+    el:'.static',
+    data : {
+      isActive : true,
+      hasError : true
+    }
+  })
+
+  // var vm2=new Vue({
+  //   el:'.app2',
+  //   data : {
+  //     classObject:{
+  //       active:true,
+  //       'text-danger':true
+  //     }
+  //   }
+  // })
+
+  var vm3= new Vue({
+    el:'.a',
+    data : {
+      acitveClass: 'active',
+      errorClass : 'text-danger'
+    }
+  })
+
+  var vm3=new Vue({
+    el:'.b',
+    data :{
+      styleObject:{
+        color : 'red',
+        fontSize:'13px'
+      }
+    }
+  })
+
+
+</script>
+</html>
